@@ -12,21 +12,27 @@ public class player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//initialize all variable
 		onGround = true;
 		jumpPressure = 0;
 		minJump = 5f;
-		maxJumpPressure = 15f;
+		maxJumpPressure = 10f;
 		rbody = GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//bagian translasi
+		transform.Translate(0.2f * Input.GetAxis("Horizontal"), 0f, 0.2f * Input.GetAxis("Vertical"));
+
+
+		//bagian lompat-lompat
 		if (onGround) {
 
 			//holding jump button
 			if (Input.GetButton ("Jump")) {
 				if (jumpPressure < maxJumpPressure) {
-					jumpPressure += Time.deltaTime * 10f;
+					jumpPressure += Time.deltaTime * 20f;
 				} else {
 					jumpPressure = maxJumpPressure;
 				}
