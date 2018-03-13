@@ -15,8 +15,8 @@ public class player : MonoBehaviour {
 		//initialize all variable
 		onGround = true;
 		jumpPressure = 0;
-		minJump = 5f;
-		maxJumpPressure = 10f;
+		minJump = 15f;
+		maxJumpPressure = 20f;
 		rbody = GetComponent<Rigidbody> ();
 	}
 	
