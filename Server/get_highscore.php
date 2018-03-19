@@ -1,5 +1,4 @@
-<?php
-   
+<?php   
   // kalau di web hosting
   $con=mysqli_connect("localhost","id5119757_unity","unity","id5119757_unity");
 
@@ -12,7 +11,6 @@
 	
    $result = mysqli_query($con, "SELECT * FROM highscore ORDER BY score DESC LIMIT 10");
 
-
    while ($row = mysqli_fetch_assoc($result)) {
       $array[] = $row;
    }
@@ -21,6 +19,6 @@
    
    echo json_encode($array);
  
-    mysqli_free_result($result);
+   mysqli_free_result($result);
  
-    mysqli_close($con);
+   mysqli_close($con);
