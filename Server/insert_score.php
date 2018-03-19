@@ -16,5 +16,5 @@
 			  VALUES ('$nama', '$score')";
 
 	mysqli_query($con, $query);
-
-	mysqli_close($con);
+  
+	mysqli_close($con); 
