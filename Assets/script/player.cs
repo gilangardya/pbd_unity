@@ -28,7 +28,6 @@ public class player : MonoBehaviour {
 
 		//bagian lompat-lompat
 		if (onGround) {
-
 			//holding jump button
 			if (Input.GetButton ("Jump")) {
 				if (jumpPressure < maxJumpPressure) {
@@ -36,9 +35,7 @@ public class player : MonoBehaviour {
 				} else {
 					jumpPressure = maxJumpPressure;
 				}
-			
 			}
-
 			//not holding jump button
 			else {
 				if (jumpPressure > 0f) {
@@ -51,7 +48,6 @@ public class player : MonoBehaviour {
 				}
 			}
 		}
-			
 	}
 
 	void OnCollisionEnter(Collision other) {
