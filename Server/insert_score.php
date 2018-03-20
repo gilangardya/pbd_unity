@@ -12,9 +12,22 @@
 	$nama = $_GET["nama"];
 	$score = $_GET["score"];
 
-	$query = "INSERT INTO highscore (nama, score)
-			  VALUES ('$nama', '$score')";
+	if ($nama == NULL || $score == NULL) {
+		$response = array(
+			"message" => "request parameter have to be complete"
+		);
 
-	mysqli_query($con, $query);
-  
+		echo json_encode($response);		
+	} else {
+		$query = "INSERT INTO highscore (nama, score)
+				VALUES ('$nama', '$score')";
+
+		$response = array(
+			"message" => "success",
+		);
+
+		echo json_encode($response);
+		mysqli_query($con, $query);
+		
+	}
 	mysqli_close($con); 

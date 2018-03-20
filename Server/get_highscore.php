@@ -8,10 +8,10 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
 	
-   $result = mysqli_query($con, "SELECT * FROM highscore ORDER BY score DESC LIMIT 10");
+   $result = mysqli_query($con, "SELECT nama, score FROM highscore ORDER BY score DESC LIMIT 10");
 
    while ($row = mysqli_fetch_assoc($result)) {
-      $array[] = $row;
+     $array[] = $row;
    }
 
    header('Content-Type:Application/json');
