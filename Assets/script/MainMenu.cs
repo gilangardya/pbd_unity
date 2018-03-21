@@ -7,8 +7,8 @@ public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	public void PlayGame() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		// pindah scene
+		Application.LoadLevel("scene1");
 	}
 
 	public void Settings() {
