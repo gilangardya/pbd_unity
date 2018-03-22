@@ -29,7 +29,7 @@ public class player : MonoBehaviour {
 		//bagian lompat-lompat
 		if (onGround) {
 			//holding jump button
-			if (Input.GetButton ("Jump")) {
+			if (Input.GetButton ("Jump") || Input.GetMouseButtonDown(0)) {
 				jump.Play();
 				if (jumpPressure < maxJumpPressure) {
 					jumpPressure += Time.deltaTime * 20f;
@@ -48,13 +48,6 @@ public class player : MonoBehaviour {
 					jumpPressure = 0;
 				}
 			}
-		}
-	}
-
-	void OnCollisionEnter(Collision other) {
-		if (other.gameObject.CompareTag ("ground")) {
-			onGround = true;
-			print ("HAHAHA");
 		}
 	}
 }
