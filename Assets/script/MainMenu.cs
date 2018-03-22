@@ -8,6 +8,9 @@ public class MainMenu : MonoBehaviour {
 	// Use this for initialization
 	public void PlayGame() {
 		// pindah scene
+		PlayerPrefs.SetString("name", "Gilang A");
+		PlayerPrefs.SetInt ("score", 9999);
+		PlayerPrefs.Save ();
 		Application.LoadLevel("scene1");
 	}
 

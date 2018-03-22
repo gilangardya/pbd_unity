@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movingCube1 : MonoBehaviour
+public class movingCube3 : MonoBehaviour
 {
 	public float speed;
 	Vector3 pos;
@@ -12,14 +12,13 @@ public class movingCube1 : MonoBehaviour
     IEnumerator Start()
     {
 		pos = transform.position;
-		pointA = new Vector3(pos.x - 10.0f, pos.y, pos.z);
-		pointB = new Vector3(pos.x + 10.0f, pos.y, pos.z);
+		pointA = new Vector3(pos.x, pos.y + 10.0f, pos.z);
+		pointB = new Vector3(pos.x, pos.y - 10.0f, pos.z);
         while(true)
         {
             yield return StartCoroutine(MoveObject(transform, pointA, pointB, speed));
             yield return StartCoroutine(MoveObject(transform, pointB, pointA, speed));
         }
-
     }
    
     IEnumerator MoveObject(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
@@ -33,9 +32,4 @@ public class movingCube1 : MonoBehaviour
             yield return null;
         }
     }
-
-	void Update() {
-		Debug.Log(PlayerPrefs.GetString("name"));
-		Debug.Log ("hehe");
-	}
 }
