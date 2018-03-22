@@ -15,6 +15,10 @@ public class playerScoreClass : MonoBehaviour
     private IEnumerator coroutine;
     private string Url;
 
+	public void Kembali() {
+		Application.LoadLevel ("MainMenu");
+	}
+
 
     // Sample JSON for the following script has attached.
     IEnumerator Start()
