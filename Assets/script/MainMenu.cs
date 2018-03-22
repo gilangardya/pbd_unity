@@ -15,6 +15,10 @@ public class MainMenu : MonoBehaviour {
 		
 	}
 
+	public void HighScore() {
+		Application.LoadLevel ("scoreBoard");
+	}
+
 	public void QuitGame() {
 		Application.Quit();
 	}
