@@ -26,7 +26,6 @@ public class player : MonoBehaviour {
 		//bagian translasi
 		transform.Translate(0.2f * Input.GetAxis("Horizontal"), 0f, 0.2f * Input.GetAxis("Vertical"));
 
-
 		//bagian lompat-lompat
 		if (onGround) {
 			//holding jump button
